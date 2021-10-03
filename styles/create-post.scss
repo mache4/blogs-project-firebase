@@ -1,0 +1,130 @@
+.create-post {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: #fff;
+
+    &>h1 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 25px 25px 0;
+    }
+
+    .error {
+        margin: 15px auto 25px;
+        padding: 5px 15px;
+        font-size: 1.75rem;
+        background-color: #FFEEEE;
+        width: 100%;
+    }
+
+    form {
+        &>* {
+            display: block;
+            margin: 0 auto;
+            border: none;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input {
+            margin-top: 25px;
+            padding: 5px 10px;
+            width: 100%;
+            font-size: 1.75rem;
+            border: none;
+            border-bottom: 1px solid #000;
+            text-align: left;
+        }
+
+        textarea {
+            margin: 25px auto;
+            padding: 5px 10px;
+            width: 100%;
+            height: 225px;
+            font-size: 1.75rem;
+            border: 1px solid #000;
+            border-radius: 10px;
+            resize: none;
+            text-align: left;
+        }
+
+        &>button {
+            color: #fff;
+            border-radius: 15px;
+            font-size: 1.75rem;
+            padding: 10px 20px;
+            background-color: #B754F4;
+            transition: 0.2s ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #CA77FD;
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .create-post {
+        width: 75%;
+    }
+}
+
+@media (max-width: 700px) {
+    .create-post {
+        width: 95%;
+
+        &>h1 {
+            font-size: 2rem;
+        }
+
+        .error {
+            font-size: 1.5rem;
+        }
+
+        form {
+
+            input,
+            textarea {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .create-post {
+        &>h1 {
+            font-size: 1.75rem;
+            margin: 25px 15px 0;
+        }
+
+        .error {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .create-post {
+        position: relative;
+        transform: translate(-50%, 0);
+        margin-top: 25px;
+
+        form {
+            button {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

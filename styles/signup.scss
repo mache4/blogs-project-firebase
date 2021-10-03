@@ -1,0 +1,150 @@
+.signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    width: 50%;
+    padding: 50px 0px 25px;
+    max-width: 800px;
+    background-color: #fff;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .error {
+        background-color: #FFEEEE;
+        padding: 5px 15px;
+        color: red;
+        margin: 25px auto;
+        width: 75%;
+    }
+
+    form {
+        p {
+            font-size: 2rem;
+        }
+
+        span {
+            display: block;
+            width: 75%;
+            margin: 0 auto;
+            text-align: left;
+
+            font-size: 1.25rem;
+        }
+
+        input {
+            width: 75%;
+            display: block;
+            font-size: 1.5rem;
+            padding: 5px 5px;
+            margin: 0 auto 50px;
+            border: none;
+            border-bottom: 1px solid #000;
+            text-align: left;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 10px;
+
+            color: #fff;
+            border: 2px solid #fff;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            background-color: #B754F4;
+            cursor: pointer;
+            transition: 0.2s ease;
+
+            &:hover {
+                background-color: #CA77FD;
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+
+    &>p {
+        margin: 25px 25px 0;
+        font-size: 1.25rem;
+
+        a {
+            color: #B754F4;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .signup {
+        width: 75%;
+    }
+}
+
+@media (max-width: 700px) {
+    .signup {
+        width: 95%;
+
+        &>h1 {
+            font-size: 2.5rem;
+        }
+
+        form {
+            input {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 1.75rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .signup {
+        .error {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .signup {
+        form {
+            input {
+                font-size: 1.25rem;
+            }
+        }
+
+        &>p {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .signup {
+        position: relative;
+        transform: translate(-50%, 0);
+        margin: 25px 0;
+    }
+}
