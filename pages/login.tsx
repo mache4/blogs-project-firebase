@@ -20,8 +20,9 @@ const Login: NextPage<Props> = (props) => {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
+        let authErr = false;
         setError("");
 
         if (!emailRef.current?.value && !passwordRef.current?.value)
@@ -30,14 +31,19 @@ const Login: NextPage<Props> = (props) => {
             return setError("Enter your Email");
         if (!passwordRef.current?.value)
             return setError("Enter your Password");
-        signInWithEmailAndPassword(auth, emailRef.current?.value, passwordRef.current?.value)
+        await signInWithEmailAndPassword(auth, emailRef.current?.value, passwordRef.current?.value)
             .then((userCredential) => {
                 setUser(userCredential.user);
-                props.setUserInfo(userCredential.user);
+                props.setUserInfo({
+                    email: userCredential.user.email,
+                    id: userCredential.user.uid
+                });
             })
             .catch((error) => {
                 setError(error.message);
+                authErr = true;
             });
+        if (authErr) return;
         router.push('/your-profile');
     }
 

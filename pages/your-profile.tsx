@@ -13,8 +13,8 @@ interface Props {
 const YourProfile: NextPage<Props> = (props) => {
     const router = useRouter();
 
-    const logoutHandler = () => {
-        auth.signOut();
+    const logoutHandler = async () => {
+        await auth.signOut();
         props.setUserInfo(null);
         router.push('/login');
     }
@@ -22,7 +22,7 @@ const YourProfile: NextPage<Props> = (props) => {
     return (
         <Layout>
             <div className="your-profile">
-                Your Profile
+                <p>{props.userInfo ? props.userInfo.email : null}</p>
                 <button onClick={logoutHandler}>Logout</button>
             </div>
         </Layout >

@@ -1,56 +1,71 @@
 .post {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    margin: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    margin: 25px auto;
     padding: 25px;
-    width: 75%;
-    text-align: left;
-    border-radius: 15px;
+    width: 50%;
+    height: 225px;
+    border-radius: 5px;
     overflow: hidden;
 
-    .post__author {
-        color: #777;
-        font-size: 1rem;
-        cursor: pointer;
+    .post__info {
+        width: 50%;
         text-align: left;
 
-        &:hover {
-            text-decoration: underline;
+        .post__author {
+            color: #777;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: left;
+            overflow: hidden;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
-    }
 
-    .post__name {
-        display: inline-block;
-        font-size: 1.75rem;
-        font-weight: 700;
-        margin: 10px 0;
-        cursor: pointer;
+        .post__name {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            cursor: pointer;
+            text-align: left;
+            padding-right: 20px;
+            overflow: hidden;
 
-        &:hover {
-            text-decoration: underline;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .post__date {
+            color: #777;
+            font-size: 1rem;
+            text-align: left;
+            overflow: hidden;
+
+            span {
+                margin: 0 10px;
+            }
         }
     }
 
     .post__content {
-        margin: 0 0 35px;
-        padding: 20px 0;
-        line-height: 32px;
-        // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-        // border-radius: 15px;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        font-size: 1.1rem;
+        padding: 20px;
+        line-height: 25px;
+        border-left: 1px solid #000;
         text-align: left;
-    }
-
-    .post__date {
-        position: absolute;
-        bottom: 15px;
-        left: 25px;
-        color: #777;
-        font-size: 1rem;
-
-        span {
-            margin: 0 10px;
-        }
+        overflow: hidden;
     }
 }
 

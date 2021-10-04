@@ -4,9 +4,10 @@ import Layout from '../../components/layout';
 import { child, get } from "firebase/database";
 import { dbRef } from '../../firebase/firebase';
 import { useRouter } from 'next/router';
+import { connect } from 'react-redux';
 
 interface Props {
-
+    userInfo: any
 };
 
 
@@ -43,12 +44,24 @@ const UserId: NextPage<Props> = (props) => {
     });
 
     useEffect(() => {
-        get(child(dbRef, 'users/' + id)).then((snapshot) => {
-            if (snapshot.exists()) {
-                setUser(snapshot.val());
+        if (props.userInfo) {
+            if (id === props.userInfo.id) {
+                router.push('/your-profile');
+            } else {
+                get(child(dbRef, 'users/' + id)).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        setUser(snapshot.val());
+                    }
+                });
             }
-        });
-    }, [id]);
+        } else {
+            get(child(dbRef, 'users/' + id)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    setUser(snapshot.val());
+                }
+            });
+        }
+    }, [id, props.userInfo, router]);
     return (
         <Layout>
             <div className="user-page">
@@ -58,4 +71,10 @@ const UserId: NextPage<Props> = (props) => {
     );
 }
 
-export default UserId;
+const mapStateToProps = (state: any) => {
+    return {
+        userInfo: state.userInfo
+    }
+}
+
+export default connect(mapStateToProps, null)(UserId);

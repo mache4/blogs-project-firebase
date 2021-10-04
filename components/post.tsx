@@ -29,10 +29,12 @@ const Post: NextPage<Props> = (props) => {
 
     return (
         <div className="post">
-            <p className="post__author" onClick={props.user}>{props.author.email}</p>
-            <p className="post__name" onClick={props.post}>{props.name}</p>
+            <div className="post__info">
+                <p className="post__author" onClick={props.user}>{props.author.email}</p>
+                <p className="post__name" onClick={props.post}>{props.name}</p>
+                <p className="post__date">{day}.{month}.{year}<span>{hours}:{minutes}:{seconds}</span></p>
+            </div>
             <p className="post__content">{props.content.length < 150 ? props.content : props.content.slice(0, 150) + '...'}</p>
-            <p className="post__date">{day}.{month}.{year}<span>{hours}:{minutes}:{seconds}</span></p>
         </div>
     );
 }

@@ -43,8 +43,8 @@ const CreatePost: NextPage<Props> = (props) => {
         if (!contentRef.current?.value)
             return setError('Enter content of your post');
 
-        if (nameRef.current?.value.length > 30)
-            return setError('Your name can\'t be longer than 150 characters');
+        if (nameRef.current?.value.length > 50)
+            return setError('Your name can\'t be longer than 50 characters');
         if (contentRef.current?.value.length > 2500)
             return setError('Content of your post can\'t be longer than 2500 characters');
 
@@ -68,7 +68,7 @@ const CreatePost: NextPage<Props> = (props) => {
         <Layout>
             <div className="create-post">
                 <h1>Create Your Post</h1>
-                <h2 className="error" style={{ color: 'red', opacity: error ? 1 : 0 }}>{error}.</h2>
+                <h2 className="error" style={{ opacity: error ? 1 : 0 }}>{error}.</h2>
                 <form onSubmit={submitPost}>
                     <input type="text" ref={nameRef} placeholder="Post Name" />
                     <textarea ref={contentRef} placeholder="Post Content"></textarea>

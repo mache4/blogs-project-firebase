@@ -42,7 +42,7 @@ const SignUp: NextPage<Props> = (props) => {
         return str;
     }
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
         setError("");
 
@@ -62,9 +62,9 @@ const SignUp: NextPage<Props> = (props) => {
         if (passwordRef.current?.value !== passwordConfirmRef.current?.value)
             return setError("Passwords do not match");
 
-        createUserWithEmailAndPassword(auth, emailRef.current?.value, passwordRef.current?.value)
+        await createUserWithEmailAndPassword(auth, emailRef.current?.value, passwordRef.current?.value)
             .then((userCredential) => {
-                const id = Date.now() + '_' + randomId(10);
+                const id = userCredential.user.uid;
                 const data = {
                     email: userCredential.user.email,
                     id: id,
