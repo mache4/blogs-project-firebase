@@ -43,7 +43,6 @@ const Home: NextPage<Props> = (props) => {
     if (posts) {
         const postArray = Object.keys(posts).reverse();
         postCards = Object.values(posts).reverse().map((post: Post, index: number) => {
-            console.log(post.author.id)
             return <Post
                 key={postArray[index]}
                 name={post.name}

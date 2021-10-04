@@ -1,8 +1,6 @@
 import Link from 'next/link';
-import styled from 'styled-components';
 import type { NextPage } from 'next';
 import { connect } from 'react-redux';
-import { actions } from '../store/actions';
 
 interface Props {
     theme: boolean,

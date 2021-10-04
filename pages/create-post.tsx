@@ -65,7 +65,7 @@ const CreatePost: NextPage<Props> = (props) => {
     };
 
     return (
-        <Layout>
+        <Layout bgc="B2DBFF">
             <div className="create-post">
                 <h1>Create Your Post</h1>
                 <h2 className="error" style={{ opacity: error ? 1 : 0 }}>{error}.</h2>

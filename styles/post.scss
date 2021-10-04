@@ -11,6 +11,8 @@
     height: 225px;
     border-radius: 5px;
     overflow: hidden;
+    // background-color: #B2DBFF;
+    background-color: #fff;
 
     .post__info {
         width: 50%;
@@ -66,38 +68,71 @@
         border-left: 1px solid #000;
         text-align: left;
         overflow: hidden;
+        color: #777;
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
     .post {
         width: 75%;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
+    .post {
+        .post__content {
+            font-size: 1rem;
+            line-height: 20px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
     .post {
         width: 95%;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
     .post {
-        .post__author {
-            font-size: 0.9rem;
-        }
+        padding: 20px;
 
-        .post__name {
-            font-size: 1.5rem;
+        .post__info {
+            .post__date {
+                span {
+                    margin: 2px 0;
+                    display: block;
+                    text-align: left;
+                }
+            }
         }
 
         .post__content {
-            font-size: 1.2rem;
-            line-height: 25px;
+            font-size: 0.9rem;
+            padding: 15px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .post {
+        .post__info {
+            .post__author {
+                font-size: 0.85rem;
+            }
+
+            .post__name {
+                font-size: 1.2rem;
+                padding-right: 10px;
+            }
+
+            .post__date {
+                font-size: 0.85rem;
+            }
         }
 
-        .post__date {
-            font-size: 0.9rem;
+        .post__content {
+            font-size: 0.8rem;
         }
     }
 }
