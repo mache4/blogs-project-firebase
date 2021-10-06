@@ -105,6 +105,16 @@
     }
 }
 
+@media (max-width: 550px) {
+    .create-post {
+        position: inherit;
+        left: unset;
+        top: unset;
+        transform: inherit;
+        margin: 25px auto;
+    }
+}
+
 @media (max-width: 500px) {
     .create-post {
         &>h1 {

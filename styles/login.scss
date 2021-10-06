@@ -122,6 +122,12 @@
 
 @media (max-width: 550px) {
     .login {
+        position: inherit;
+        left: unset;
+        top: unset;
+        transform: inherit;
+        margin: 25px auto;
+
         .error {
             font-size: 1.25rem;
         }
