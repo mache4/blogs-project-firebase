@@ -18,12 +18,26 @@
     }
 
     .links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
         a {
             display: inline-block;
             margin-right: 25px;
+            color: #288DE6;
+            transition: 0.2s ease;
+
+            &:hover {
+                color: #46A5F8;
+            }
 
             &:last-child {
                 margin-right: 0;
+
+                &:hover {
+                    color: #fff;
+                }
             }
         }
 
@@ -41,5 +55,41 @@
                 background-color: #46A5F8;
             }
         }
+
+        .user-icon {
+            font-size: 1.75rem;
+            color: #288DE6;
+            transition: 0.2s ease;
+            cursor: pointer;
+
+            &:hover {
+                color: #46A5F8;
+            }
+        }
+    }
+
+    .bars-icon {
+        display: none;
+        color: #288DE6;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        .links {
+            display: none;
+        }
+
+        .bars-icon {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 0 20px;
     }
 }

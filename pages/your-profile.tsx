@@ -4,6 +4,7 @@ import { auth } from '../firebase/firebase';
 import { connect } from 'react-redux';
 import { actions } from '../store/actions';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 interface Props {
     userInfo: any,
@@ -12,6 +13,7 @@ interface Props {
 
 const YourProfile: NextPage<Props> = (props) => {
     const router = useRouter();
+    const [modal, setModal] = useState(false);
 
     const logoutHandler = async () => {
         await auth.signOut();
@@ -19,11 +21,27 @@ const YourProfile: NextPage<Props> = (props) => {
         router.push('/login');
     }
 
+    const showModal = () => {
+        setModal(true);
+    }
+
+    const closeModal = () => {
+        setModal(false);
+    }
+
     return (
         <Layout>
             <div className="your-profile">
                 <p>{props.userInfo ? props.userInfo.email : null}</p>
-                <button onClick={logoutHandler}>Logout</button>
+                <button onClick={showModal}>Logout</button>
+
+                <div className="modal" style={{
+                    transform: modal ? 'translate(-50%, 0)' : 'translate(-50%, -250%)'
+                }}>
+                    <p>Are you sure you want to log out?</p>
+                    <button onClick={logoutHandler}>YES</button>
+                    <button onClick={closeModal}>NO</button>
+                </div>
             </div>
         </Layout >
     );

@@ -3,7 +3,10 @@ import '../styles/navbar.scss';
 import '../styles/signup.scss';
 import '../styles/login.scss';
 import '../styles/create-post.scss';
+import '../styles/your-profile.scss';
 import '../styles/post.scss';
+import '../styles/sidebar.scss';
+import '../styles/overlay.scss';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
